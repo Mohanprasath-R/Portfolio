@@ -4,6 +4,7 @@ import About from "../components/About";
 import Footer from "../components/Footer";
 import Contact from "./Contact";
 import Projects from "./Projects";
+import { Link } from 'react-scroll'; // For smooth scrolling between sections
 import Services from "./Services";
 import Skills from "./Skills";
 import "../App.css"
@@ -44,10 +45,16 @@ const Home = () => {
               <p className="text-light lead mb-4">
                 A passionate Web Developer dedicated to crafting innovative digital experiences.
               </p>
-              <a href="#about" className="btn btn-primary btn-lg m-1 px-4 py-2 rounded-pill">
+              <Link
+                to="about"
+                className="btn btn-primary btn-lg m-1 px-4 py-2 rounded-pill"
+                smooth={true}
+                offset={-50}
+                duration={500}
+                activeClass="active"
+              >
                 About Me
-              </a>
-
+              </Link>
               {/* Social Media Links */}
               <div className="d-flex justify-content-center mt-4">
                 <a

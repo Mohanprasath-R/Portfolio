@@ -3,57 +3,66 @@ import axios from "axios";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
         const response = await axios.get("http://localhost:5000/api/projects");
         setProjects(response.data);
+        setLoading(false);
       } catch (error) {
-        console.error("Error fetching projects:", error);
+        setError("Error fetching projects.");
+        setLoading(false);
       }
     };
     fetchProjects();
   }, []);
 
   return (
-    <div className="container 100vh py-3" id="projects">
-      <h2 className="text-primary text-center mb-5">Projects</h2>
-      <div className="row">
-        {projects.map((project, index) => (
-          <div className="col-md-6 col-lg-4 mb-4" key={index}>
-            <div className="card h-100">
-              <img
-                src={`http://localhost:5000${project.imageUrl}`}
-                className="card-img-top"
-                alt={project.title}
-              />
-              <div className="card-body">
-                <h5 className="card-title">{project.title}</h5>
-                <p className="card-text">{project.description}</p>
-              </div>
-              <div className="card-footer">
-                <a
-                  href={project.liveDemoUrl}
-                  className="btn btn-primary"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Live Demo
-                </a>
-                <a
-                  href={project.githubUrl}
-                  className="btn btn-secondary"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </a>
+    <div className="container py-5 vh-100" id="projects">
+      <h2 className="text-center text-primary mb-4">My Projects</h2>
+
+      {loading ? (
+        <div className="text-center">
+          <div className="spinner-border text-primary" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+        </div>
+      ) : error ? (
+        <p className="text-center text-danger">{error}</p>
+      ) : (
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          {projects.map((project) => (
+            <div className="col" key={project.id}>
+              <div className="card h-100 shadow-sm border-light rounded">
+                <img
+                  src={`http://localhost:5000${project.imageUrl}`}
+                  className="card-img-top"
+                  alt={project.title}
+                  style={{ objectFit: "cover", height: "150px" }}
+                />
+                <div className="card-body d-flex flex-column">
+                  <h5 className="card-title">{project.title}</h5>
+                  <p className="card-text text-muted">{project.description}</p>
+                </div>
+                  <div className="card-footer border-0 bg-white text-center">
+                    <a
+                      href={project.githubUrl}
+                      className="btn btn-sm btn-outline-secondary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`GitHub of ${project.title}`}
+                    >
+                      GitHub
+                    </a>
+                  </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
