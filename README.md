@@ -37,5 +37,5 @@ A fully functional portfolio website built using the MERN (MongoDB, Express, Rea
 
 ### **Clone the Repository**
 ```bash
-git clone https://github.com/username/portfolio.git
+git clone https://github.com/Mohanprasath-R/Portfolio.git
 cd portfolio
