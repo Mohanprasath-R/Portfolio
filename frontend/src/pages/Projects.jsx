@@ -48,6 +48,16 @@ const Projects = () => {
                   <p className="card-text text-muted">{project.description}</p>
                 </div>
                   <div className="card-footer border-0 bg-white text-center">
+                  <a
+                      href={project.l}
+                      className="btn btn-sm btn-outline-secondary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`GitHub of ${project.title}`}
+                    >
+                      Live Url
+                    </a>
+                    
                     <a
                       href={project.githubUrl}
                       className="btn btn-sm btn-outline-secondary"
