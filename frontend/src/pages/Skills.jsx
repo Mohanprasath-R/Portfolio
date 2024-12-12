@@ -34,7 +34,7 @@ const Skills = () => {
     });
   }, []);
   return (
-    <div className="container-fluid vh-100 pt-5 px-5 bg-dark" id="skills">
+    <div className="container-fluid h-100 pt-5 py-5 bg-dark" id="skills">
       <h2 className="text-light text-center m-2">My Skills</h2>
       <div className="row justify-content-center">
           {skills.map((skill, index) => (

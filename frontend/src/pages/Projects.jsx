@@ -21,7 +21,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="container py-5 vh-100" id="projects">
+    <div className="container-fluid p-md-5 h-100 " id="projects">
       <h2 className="text-center text-primary mb-4">My Projects</h2>
 
       {loading ? (
@@ -41,32 +41,29 @@ const Projects = () => {
                   src={`http://localhost:5000${project.imageUrl}`}
                   className="card-img-top"
                   alt={project.title}
-                  style={{ objectFit: "cover", height: "150px" }}
+                  style={{ objectFit: "cover" }}
                 />
                 <div className="card-body d-flex flex-column">
                   <h5 className="card-title">{project.title}</h5>
                   <p className="card-text text-muted">{project.description}</p>
                 </div>
-                  <div className="card-footer border-0 bg-white text-center">
+                  <div className="card-footer d-flex justify-content-around border-0">
                   <a
-                      href={project.l}
-                      className="btn btn-sm btn-outline-secondary"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`GitHub of ${project.title}`}
-                    >
-                      Live Url
-                    </a>
-                    
-                    <a
-                      href={project.githubUrl}
-                      className="btn btn-sm btn-outline-secondary"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`GitHub of ${project.title}`}
-                    >
-                      GitHub
-                    </a>
+                  href={project.liveDemoUrl}
+                  className="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </a>
+                <a
+                  href={project.githubUrl}
+                  className="btn btn-secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
                   </div>
               </div>
             </div>

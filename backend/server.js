@@ -13,7 +13,7 @@ app.use("/assets", express.static(path.join(__dirname, "assets")));
 
 // Connect to MongoDB
 mongoose
-  .connect("mongodb://localhost:27017/portfolioDB", {
+  .connect("mongodb+srv://mohanprasath:mohan2004@cluster0.rg93q.mongodb.net/portfolioDB", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -24,5 +24,5 @@ mongoose
 app.use(projectRoutes);
 
 // Start the server
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
