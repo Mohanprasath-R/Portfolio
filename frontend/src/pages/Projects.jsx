@@ -9,7 +9,7 @@ const Projects = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/projects");
+        const response = await axios.get("https://portfolio-lgag.onrender.com/api/projects");
         setProjects(response.data);
         setLoading(false);
       } catch (error) {
@@ -38,7 +38,7 @@ const Projects = () => {
             <div className="col" key={project.id}>
               <div className="card h-100 shadow-sm border-light rounded">
                 <img
-                  src={`http://localhost:5000${project.imageUrl}`}
+                  src={`https://portfolio-lgag.onrender.com${project.imageUrl}`}
                   className="card-img-top"
                   alt={project.title}
                   style={{ objectFit: "cover" }}
