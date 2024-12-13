@@ -2,6 +2,7 @@ import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  plugins: [react()],
   base: '/', // Ensure this starts with a slash
   server: {
     host: '0.0.0.0', // Bind to all network interfaces
