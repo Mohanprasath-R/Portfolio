@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Typed from "typed.js";
-import About from "../components/About";
+import About from "./About";
 import Footer from "../components/Footer";
 import Contact from "./Contact";
 import Projects from "./Projects";
