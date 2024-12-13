@@ -34,8 +34,8 @@ const Projects = () => {
         <p className="text-center text-danger">{error}</p>
       ) : (
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-          {projects.map((project) => (
-            <div className="col" key={project.id}>
+          {projects.map((project,id) => (
+            <div className="col" key={id}>
               <div className="card h-100 shadow-sm border-light rounded">
                 <img
                   src={`https://portfolio-lgag.onrender.com${project.imageUrl}`}

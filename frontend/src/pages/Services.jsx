@@ -42,7 +42,7 @@ const Services = () => {
       <div className="row ">
 
         {services.map((service, index) => (
-          <div className="col-md-4 p-2">
+          <div className="col-md-4 p-2" key={index}>
             <div className="text-center py-3 border">
               <p className="h1 text-danger"><i className={service.icon}></i>
               </p>

@@ -1,12 +1,6 @@
 import { useEffect } from "react";
 import Typed from "typed.js";
-import About from "./About";
-import Footer from "../components/Footer";
-import Contact from "./Contact";
-import Projects from "./Projects";
 import { Link } from 'react-scroll'; // For smooth scrolling between sections
-import Services from "./Services";
-import Skills from "./Skills";
 import "../App.css"
 const Home = () => {
   useEffect(() => {
@@ -42,7 +36,7 @@ const Home = () => {
               </h1>
               <h4 className="text-light "><span className="typed text-info"></span>
               </h4>
-              <p className="text-light lead mb-4">
+              <p className="text-light lead mb-2">
                 A passionate Web Developer dedicated to crafting innovative digital experiences.
               </p>
               <Link
@@ -99,12 +93,6 @@ const Home = () => {
         </div>
       </div>
       {/* Sections */}
-      <About />
-      <Skills />
-      <Projects />
-      <Services />
-      <Contact />
-      <Footer />
     </>
   );
 };
