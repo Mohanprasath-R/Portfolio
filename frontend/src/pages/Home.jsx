@@ -23,7 +23,7 @@ const Home = () => {
     <>
       {/* Main Home Section */}
       
-        <div className="container-fluid text-center py-5 h-100 " id="home">
+        <div className="container-fluid text-center py-5 vh-100 " id="home">
         <div className="d-flex justify-content-center align-items-center my-sm-5 " >
           {/* Navigation Bar */}
 
