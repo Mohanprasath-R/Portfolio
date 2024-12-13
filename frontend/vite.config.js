@@ -1,8 +1,10 @@
-import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  base : /Portfolio/,
-})
+  base: '/', // Ensure this starts with a slash
+  server: {
+    host: '0.0.0.0', // Bind to all network interfaces
+    port: process.env.PORT || 5173, // Use the Render-provided port or fallback
+  },
+});
