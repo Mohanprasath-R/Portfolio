@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Josefin+Sans:wght@300;400;500;600;700&family=Condiment&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-family-inter: 'Inter', sans-serif;
+  --font-family-poppins: 'Poppins', sans-serif;
+  --font-family-josefin: 'Josefin Sans', sans-serif;
+  --font-family-condiment: 'Condiment', cursive;
+  --box-shadow-3xl: 0 0 600px rgb(68, 0, 255), inset 0 0 600px rgb(30, 90, 255);
+  --box-shadow-in: inset 0 0 60px rgb(68, 0, 255);
+}
+
+.font-inter {
+  font-family: var(--font-family-inter);
+}
+
+.font-poppins {
+  font-family: var(--font-family-poppins);
+}
+
+.font-josefin {
+  font-family: var(--font-family-josefin);
+}
+
+.font-condiment {
+  font-family: var(--font-family-condiment);
+}
+
+.shadow-3xl {
+  box-shadow: var(--box-shadow-3xl);
+}
+
+.shadow-in {
+  box-shadow: var(--box-shadow-in);
+}
+
+
