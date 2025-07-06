@@ -9,7 +9,7 @@ const Projects = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get("https://portfolio-lgag.onrender.com/api/projects");
+        const response = await axios.get("https://portfolio-ukcz.onrender.com/api/projects");
         setProjects(response.data);
         setLoading(false);
       } catch (error) {
