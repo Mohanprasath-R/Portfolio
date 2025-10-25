@@ -11,7 +11,7 @@ const Project = () => {
       tech: ["React", "React Icons ", "Tailwind CSS ", "web3forms API", "Framer Motion"],
       image: "./portfolio.png",
       github: "https://github.com/Mohanprasath-R/portfolio",
-      live: "https://mohanprasath-r.github.io/portfolio"
+      live: "https://mprasath-porfolio.netlify.app/"
     },
     {
       title: "E-Commerce App",
@@ -22,12 +22,12 @@ const Project = () => {
       live: "https://ecommerce-demo.herokuapp.com"
     },
     {
-      title: "Task Manager",
-      description: "A productivity app for managing tasks with drag-and-drop functionality and real-time updates.",
-      tech: ["React", "Firebase", "Material-UI"],
-      image: "./image.png",
-      github: "https://github.com/Mohanprasath-R/task-manager",
-      live: "https://task-manager-demo.netlify.app"
+      title: "Qr-code Generator",
+      description: "A QR code generator app built with React that utilizes an API to create QR codes dynamically.",
+      tech: ["React", "API"],
+      image: "./QrCode.png",
+      github: "https://github.com/Mohanprasath-R/QR-Code_App",
+      live: "https://mohanprasath-r.github.io/QR-Code_App/"
     }
   ];
 
@@ -68,12 +68,10 @@ const Project = () => {
         animate="visible"
       >
         {projects.map((project, index) => (
-          <motion.div
+          <div
             key={index}
             className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
             variants={cardVariants}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
             <motion.img
               src={project.image}
@@ -82,40 +80,46 @@ const Project = () => {
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.3 }}
             />
-            <div className="p-6">
+            <div className="p-6 gap-2 flex flex-col items-center">
               <h2 className="text-xl font-bold mb-2">{project.title}</h2>
-              <p className="text-gray-300 mb-4">{project.description}</p>
-              <div className="flex flex-wrap items-center gap-2 mb-4 h-15">
+              <p className="text-gray-300 mb-4 h-15">{project.description}</p>
+              <div className="flex flex-wrap items-center gap-2 mb-4 h-20">
                 {project.tech.map((tech, techIndex) => (
                   <span key={techIndex} className="bg-blue-600 text-white px-2 py-1 rounded text-sm">
                     {tech}
                   </span>
                 ))}
               </div>
-              <div className="flex justify-around gap-4">
+              <div className=" w-100 flex justify-around">
                 <motion.a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-300 hover:text-white"
-                  whileHover={{ scale: 1.1 }}
+                  className="flex items-center gap-4 text-lg hover:text-blue-400 transition-colors duration-300"
+                  whileHover={{ scale: 1.1, x: 10 }}
                   whileTap={{ scale: 0.9 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 + index * 0.1 }}
                 >
                   <FaGithub title="GitHub" /> GitHub
                 </motion.a>
                 <motion.a
                   href={project.live}
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-300 hover:text-white"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 text-lg hover:text-blue-400 transition-colors duration-300"
+                whileHover={{ scale: 1.1, x: 10 }}
+                whileTap={{ scale: 0.9 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 + index * 0.1 }}
                 >
                   <FaExternalLinkAlt title="Live Demo" /> Live Demo
                 </motion.a>
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
       </motion.div>
     </motion.div>
